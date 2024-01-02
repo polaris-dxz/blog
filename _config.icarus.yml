@@ -166,8 +166,8 @@ search:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
     type: gitalk
-    client_id: e37c4095d86fda56861e
-    client_secret: 3396b949637a9f4bdd2048f344ed3106fe1b7c5e
+    client_id: 24ded1637e979b67b29f
+    client_secret: 10ce8a88157b0449f35929ab97d2558cfbd3b8eb
     repo: https://github.com/polaris-dxz/blog
     owner: polaris-dxz
     admin:
@@ -318,14 +318,14 @@ widgets:
         # Whether to show tags count, i.e. number of posts in the tag.
         show_count: true
     # Google FeedBurner email subscription widget configurations
-    # -
-    #     # Where should the widget be placed, left sidebar or right sidebar
-    #     position: left
-    #     type: subscribe_email
-    #     # Hint text under the email input
-    #     description: 
-    #     # Feedburner ID
-    #     feedburner_id: ''
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: subscribe_email
+        # Hint text under the email input
+        description: 
+        # Feedburner ID
+        feedburner_id: nodjzehfrr6'
     # Google AdSense unit configurations
     # -
     #     # Where should the widget be placed, left sidebar or right sidebar
@@ -336,16 +336,16 @@ widgets:
     #     # AdSense AD unit ID
     #     slot_id: ''
     # Follow.it email subscription widget configurations
-    # -
-    #     # Where should the widget be placed, left sidebar or right sidebar
-    #     position: left
-    #     type: followit
-    #     # Hint text under the email input
-    #     description: 
-    #     # Subscription form action URL
-    #     action_url: ''
-    #     # Feed claiming verification code
-    #     verification_code: ''
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: followit
+        # Hint text under the email input
+        description: 
+        # Subscription form action URL
+        action_url: 'https://api.follow.it/subscription-form/UWt2QlVNeDdOcWM0TmthSmpVbkR0dFVGRDVlN00za2UrcDdrWFIxWkpjTkF1andia3dVQmoyb2IydS9sUzBjbXFUaXVIU3ZjUU1jaEVFbWpGOUE0UEhsdEp2OE11RXdLK09tNm5pdk1CNU1iOXA0RjJmV3ZkNUowMmVzQjVGeVl8U1BqVjFVNkw1UHlBYkVLblEvWWZVRUdLZFhrcDBlZ1h6VlE4NzlEc1B0ST0=/8'
+        # Feed claiming verification code
+        verification_code: 'bTxbQkfVvAEQa1HYVN7k'
 # Plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:
@@ -357,7 +357,7 @@ plugins:
     # https://tongji.baidu.com
     baidu_analytics:
         # Baidu Analytics tracking ID
-        tracking_id: 
+        tracking_id: '87b4475b8903a91ecf10107cd6655705'
     # Bing Webmaster Tools plugin settings
     # https://www.bing.com/toolbox/webmaster/
     bing_webmaster:
@@ -392,12 +392,12 @@ plugins:
     # https://analytics.google.com
     google_analytics:
         # Google Analytics tracking ID
-        tracking_id: 
+        tracking_id: '421569814'
     # Hotjar user feedback plugin
     # https://www.hotjar.com/
     hotjar:
         # Hotjar site id
-        site_id: 
+        site_id: 3811285
     # Enable the KaTeX math typesetting support
     # https://katex.org/
     katex: false
