@@ -9,3 +9,4 @@ node_modules/
 public/
 
 .DS_Store
+db.json
