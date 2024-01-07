@@ -7,9 +7,12 @@ _site/
 vendor/
 
 node_modules/
+node_modules.nosync/
 public/
 .obsidian/
+.deploy_git/
 
 .DS_Store
-db.json
 TODO.md
+node_modules
+db.json
