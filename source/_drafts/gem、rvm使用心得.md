@@ -1,11 +1,11 @@
 ---
 title: gem、rvm使用心得
 date: 2013-04-25 17:06:37
-categories: Linux
+categories:
 tags:
+- Linux
 - gem
 - rvm
-thumbnail: "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1515664615&di=81c30abd5565396089d0aae99a62f8d2&src=http://a3.topitme.com/0/13/0b/11293612116520b130o.jpg"
 ---
 
 # gem,rvm使用心得

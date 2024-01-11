@@ -1,8 +1,8 @@
 ---
 title: UITableView详解
 date: 2014-05-14 08:32:25
-tags: UITableView
-categories: iOS开发
+tags: iOS
+categories:
 thumbnail: "https://i0.hdslb.com/bfs/album/0b9d38083c671b028746a529bb1a59ecf2f27172.jpg"
 ---
 

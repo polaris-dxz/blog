@@ -1,8 +1,8 @@
 ---
 title: Xcode 环境变量
 date: 2015-04-13 18:52:04
-tags:
-categories: iOS-Dev
+categories:
+tags: iOS
 ---
 
 在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。

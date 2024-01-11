@@ -1,9 +1,9 @@
 ---
 title: instrument 详解
 date: 2016-05-15 23:26:11
-tags: instrument
-categories: iOS-Dev
-thumbnail: https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg
+tags: iOS
+categories:
+thumbnail: 'https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg'
 ---
 
 整理一些常用 instrument 工具。

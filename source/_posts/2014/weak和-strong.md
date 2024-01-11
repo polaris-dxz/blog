@@ -1,8 +1,8 @@
 ---
 title: weak和 strong
 date: 2014-05-20 10:53:58
-tags: weak&strong
-categories: iOS-Dev
+tags: iOS
+categories:
 thumbnail: https://i0.hdslb.com/bfs/vc/f5c4831af0acac49b5e45d974c2313a09aee5851.jpg
 ---
 

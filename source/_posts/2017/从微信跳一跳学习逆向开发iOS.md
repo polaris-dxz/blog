@@ -1,9 +1,8 @@
 ---
 title: 从微信跳一跳学习逆向开发iOS
 date: 2017-12-29 17:05:40
-categories: iOS-Dev
-tags: libimobiledevice
-thumbnail: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515671098503&di=650c7f02a784008ee52200ccb1115324&imgtype=0&src=http%3A%2F%2Ff3.topitme.com%2F3%2Fb9%2F57%2F1132270460a9c57b93o.jpg"
+tags: iOS
+categories:
 ---
 
 这几天出了个小程序特别火，借此机会学习下逆向开发。

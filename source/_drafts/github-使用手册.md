@@ -1,9 +1,9 @@
 ---
 title: git 深入学习
 date: 2013-04-24 17:07:16
-categories: git&svn
-tags: github
-thumbnail: "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1515664615&di=e299224babfec2bfc85a87315fc28e89&src=http://a3.topitme.com/3/af/64/1128834126ba564af3o.jpg"
+categories:
+tags: 
+- git
 ---
 
 # （一）git深入学习

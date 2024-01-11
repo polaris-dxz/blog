@@ -1,8 +1,8 @@
 ---
 title: ios知识脉络梳理
 date: 2014-12-19 23:34:21
-tags: 
-categories: iOS-Dev
+categories: 
+tags: iOS
 thumbnail: https://i0.hdslb.com/bfs/drawyoo/71c32ae66719b070ef7b565cc7e3c6237915e385.jpg
 ---
 

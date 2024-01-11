@@ -1,11 +1,10 @@
 ---
 title: Http - Web 基础概述
 date: 2013-05-13 16:58:34
+categories:
 tags: 
 - Http 报文
 - URL
-categories: Http
-thumbnail: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515845822875&di=5c5ed7e816115333fa10af3a5d2e12dd&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201708%2F02%2F162015g8shss8wbwb8w193.jpg"
 ---
 
 唔。。。我真的是太菜了
@@ -63,11 +62,16 @@ Http 报文分为请求报文（request）和响应报文（response），主要
 
 # 二、URL 
 
-##1、URL 语法
+### 1、URL 语法
 
+```
 <scheme>://<user>:<password>@<host>:<port>/<path>;<params1>;<params2>?<query>&<query2>#<flag>
 
 方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段
+```
+
+
+
 
 > URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些
 
@@ -131,20 +135,23 @@ SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于�
 不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，**下游**流动。
 
 HTTP 使用流入和流出描述***事务处理***的方向。
-
+```
 客服端\
 
-​           服务器
+	  服务器
 
 客户端/
+```
+
+
 
 # 三、连接管理
 
-###1、OSI 七层协议和 TCP/IP 五层网络协议
+### 1、OSI 七层协议和 TCP/IP 五层网络协议
 
 总结为一句话：应表会、传网数物（五层协议中应表会为一层）。
 
-###2、TCP 协议中的三次握手
+### 2、TCP 协议中的三次握手
 
 总结为一句话：“船~来~了！船~来~了~吗？船~来~了。”之后服务器把船开往客服端。
 

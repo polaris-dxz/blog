@@ -1,8 +1,8 @@
 ---
 title: ' 闭包、lambda 计算、block'
 date: 2014-05-15 15:07:23
-tags:
-categories: iOS-Dev
+categories:
+tags: iOS
 thumbnail: "https://i0.hdslb.com/bfs/vc/493788433bf17760555a4881fcfbf2c24fbec23e.jpg"
 ---
 
