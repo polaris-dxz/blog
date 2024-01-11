@@ -3,7 +3,7 @@ title: ios HTTP请求
 date: 2014-05-16 20:56:40
 categories:
 tags: iOS
-thumbnail: https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3584732535,1447982096&fm=27&gp=0.jpg
+thumbnail:
 ---
 
 iOS9引入了新特性 [App Transport Security (ATS)](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。

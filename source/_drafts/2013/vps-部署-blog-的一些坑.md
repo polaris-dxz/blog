@@ -1,6 +1,7 @@
 ---
 title: vps 部署 blog 的一些坑
-tags:
+tags: 
+date: 2013-04-25 17:06:37
 ---
 
 ## git 版本过低导致http 请求失败
