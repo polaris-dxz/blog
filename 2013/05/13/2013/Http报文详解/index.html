@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="google-adsense-account" content="ca-pub-7923567314234261"><meta name="msvalidate.01" content="F152A27E98C6CFEB442CA330FE930456"><title>Http - Web 基础概述 - 上沅兮のBlog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="上沅兮のBlog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="上沅兮のBlog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="唔。。。我真的是太菜了"><meta property="og:type" content="blog"><meta property="og:title" content="Http - Web 基础概述"><meta property="og:url" content="https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"><meta property="og:site_name" content="上沅兮のBlog"><meta property="og:description" content="唔。。。我真的是太菜了"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png"><meta property="og:image" content="https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E9%A6%96%E9%83%A8.png"><meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644"><meta property="og:image" content="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"><meta property="article:published_time" content="2013-05-13T08:58:34.000Z"><meta property="article:modified_time" content="2024-01-11T14:19:42.063Z"><meta property="article:author" content="上沅兮"><meta property="article:tag" content="Http 报文"><meta property="article:tag" content="URL"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"},"headline":"Http - Web 基础概述","image":["https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png","https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E9%A6%96%E9%83%A8.png"],"datePublished":"2013-05-13T08:58:34.000Z","dateModified":"2024-01-11T14:19:42.063Z","author":{"@type":"Person","name":"上沅兮"},"publisher":{"@type":"Organization","name":"上沅兮のBlog","logo":{"@type":"ImageObject","url":"https://polaris-dxz.github.io/img/logo.svg"}},"description":"唔。。。我真的是太菜了"}</script><link rel="canonical" href="https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"><link rel="alternate" href="https://polaris-dxz.github.io/blog/atom.xml" title="上沅兮のBlog" type="application/atom+xml"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?87b4475b8903a91ecf10107cd6655705";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=421569814" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', '421569814');</script><script>(function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3811285,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="follow.it-verification-code" content="bTxbQkfVvAEQa1HYVN7k"><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/"><img src="/blog/img/logo.svg" alt="上沅兮のBlog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a><a class="navbar-item" href="/blog/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/polaris-dxz"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2013-05-13T08:58:34.000Z" title="2013/5/13 16:58:34">2013-05-13</time>发表</span><span class="level-item"><time dateTime="2024-01-11T14:19:42.063Z" title="2024/1/11 22:19:42">2024-01-11</time>更新</span><span class="level-item">9 分钟读完 (大约1289个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Http - Web 基础概述</h1><div class="content"><p>唔。。。我真的是太菜了</p>
+<span id="more"></span>
+<p>[TOC]</p>
+<h1 id="一、HTTP报文"><a href="#一、HTTP报文" class="headerlink" title="一、HTTP报文"></a>一、HTTP报文</h1><p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png"></p>
+<p>Http 报文分为请求报文（request）和响应报文（response），主要分三部分：</p>
+<ul>
+<li><h2 id="1、起始行"><a href="#1、起始行" class="headerlink" title="1、起始行"></a>1、起始行</h2><ul>
+<li><p>请求行：<strong>包含了一个方法和 URL（路径） 以及 HTTP 版本</strong></p>
+</li>
+<li><p>响应行：包含了 HTTP 版本，状态码和原因短语</p>
+</li>
+<li><p>方法：</p>
+<blockquote>
+<p>分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
+</blockquote>
+</li>
+<li><p>状态码：</p>
+<blockquote>
+<p>状态码位于响应的起始行中；</p>
+<p>状态码数在每条响应报文的起始行中返回的；</p>
+</blockquote>
+</li>
+<li><p>原因短语：</p>
+<blockquote>
+<p>通常与状态码成对出现，如200 OK（描述操作状态的、文本的形式的原因短语）</p>
+</blockquote>
+</li>
+<li><p>版本号：</p>
+<blockquote>
+<p><strong>注意，版本号不会被当做小数处理，2.22要比2.3要大</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h2 id="2、首部（请求头、响应头、head）"><a href="#2、首部（请求头、响应头、head）" class="headerlink" title="2、首部（请求头、响应头、head）"></a>2、首部（请求头、响应头、head）</h2><ul>
+<li>通用首部</li>
+<li>请求首部<ul>
+<li>Accept 首部</li>
+<li>条件请求首部</li>
+<li>安全请求首部</li>
+<li>代理请求首部</li>
+</ul>
+</li>
+<li>响应首部<ul>
+<li>协商首部</li>
+<li>安全响应首部</li>
+</ul>
+</li>
+<li>实体首部<ul>
+<li>内容首部（Content）</li>
+<li>实体缓存首部</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="3、主体（请求体、响应体、body）"><a href="#3、主体（请求体、响应体、body）" class="headerlink" title="3、主体（请求体、响应体、body）"></a>3、主体（请求体、响应体、body）</h2></li>
+</ul>
+<p><img src="/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E9%A6%96%E9%83%A8.png" alt="响应报文首部"></p>
+<h1 id="二、URL"><a href="#二、URL" class="headerlink" title="二、URL"></a>二、URL</h1><h3 id="1、URL-语法"><a href="#1、URL-语法" class="headerlink" title="1、URL 语法"></a>1、URL 语法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;;&lt;params1&gt;;&lt;params2&gt;?&lt;query&gt;&amp;&lt;query2&gt;#&lt;flag&gt;</span><br><span class="line"></span><br><span class="line">方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</span><br></pre></td></tr></table></figure>
+
+
+
+
+<blockquote>
+<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
+</blockquote>
+<blockquote>
+<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
+<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
+</blockquote>
+<h2 id="2、一些常见的概念"><a href="#2、一些常见的概念" class="headerlink" title="2、一些常见的概念"></a>2、一些常见的概念</h2><h3 id="（1）-URI"><a href="#（1）-URI" class="headerlink" title="（1） URI"></a>（1） URI</h3><p>URI（统一资源标识符）</p>
+<ul>
+<li>URL（统一资源定位符）</li>
+<li>URN（统一资源名）</li>
+</ul>
+<h3 id="（1）RFC"><a href="#（1）RFC" class="headerlink" title="（1）RFC"></a>（1）RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
+<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
+<h3 id="（3）事物"><a href="#（3）事物" class="headerlink" title="（3）事物"></a>（3）事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
+<p>事物 &#x3D; 请求 + 响应</p>
+<h3 id="（4）TCP"><a href="#（4）TCP" class="headerlink" title="（4）TCP"></a>（4）TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<em><strong>转发 HTTP 报文</strong></em>。</p>
+<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
+<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
+<p>作用：</p>
+<ul>
+<li>无差错的数据传输</li>
+<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
+<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
+</ul>
+<h3 id="（5）隧道（tunnel）"><a href="#（5）隧道（tunnel）" class="headerlink" title="（5）隧道（tunnel）"></a>（5）隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
+<h3 id="（6）SSL"><a href="#（6）SSL" class="headerlink" title="（6）SSL"></a>（6）SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644"></p>
+<h3 id="（7）代理与-Agent-代理"><a href="#（7）代理与-Agent-代理" class="headerlink" title="（7）代理与 Agent 代理"></a>（7）代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
+<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
+<h3 id="（8）报文流"><a href="#（8）报文流" class="headerlink" title="（8）报文流"></a>（8）报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
+<p>HTTP 使用流入和流出描述<em><strong>事务处理</strong></em>的方向。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">客服端\</span><br><span class="line"></span><br><span class="line">	  服务器</span><br><span class="line"></span><br><span class="line">客户端/</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><h3 id="1、OSI-七层协议和-TCP-IP-五层网络协议"><a href="#1、OSI-七层协议和-TCP-IP-五层网络协议" class="headerlink" title="1、OSI 七层协议和 TCP&#x2F;IP 五层网络协议"></a>1、OSI 七层协议和 TCP&#x2F;IP 五层网络协议</h3><p>总结为一句话：应表会、传网数物（五层协议中应表会为一层）。</p>
+<h3 id="2、TCP-协议中的三次握手"><a href="#2、TCP-协议中的三次握手" class="headerlink" title="2、TCP 协议中的三次握手"></a>2、TCP 协议中的三次握手</h3><p>总结为一句话：“船<del>来</del>了！船<del>来</del>了<del>吗？船</del>来~了。”之后服务器把船开往客服端。</p>
+<p><img src="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<h3 id="3、TCP-慢启动（slow-shtar）"><a href="#3、TCP-慢启动（slow-shtar）" class="headerlink" title="3、TCP 慢启动（slow shtar）"></a>3、TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
+<blockquote>
+<p> 新建了一座桥。汽车为了试试这个桥能不能走，先慢慢开过去，如果发现没问题，其他汽车再提速过去。</p>
+</blockquote>
+<p>在提速的过程中，有个概念叫<em><strong>打开拥塞窗口</strong></em>。</p>
+<blockquote>
+<p>有一个车队要过一座桥。一开始先派一辆车过去，确认没事的话派两个车试试，如果还没事的话派四辆车过去，这个过程就叫打开拥塞窗口。</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Http - Web 基础概述</p><p><a href="https://polaris-dxz.github.io/blog/2013/05/13/2013/Http报文详解/">https://polaris-dxz.github.io/blog/2013/05/13/2013/Http报文详解/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>上沅兮</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2013-05-13</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-01-11</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/Http-%E6%8A%A5%E6%96%87/">Http 报文</a><a class="link-muted mr-2" rel="tag" href="/blog/tags/URL/">URL</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=65944e41ffbcf100127cdd05&amp;product=inline-share-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/blog/2014/01/10/2014/iOS%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">@interface编写规范</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2013/04/25/2013/vps-%E9%83%A8%E7%BD%B2-blog-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"><span class="level-item">vps 部署 blog 的一些坑</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "08d7d92917692631b3c7ec8bcedd6139",
+            repo: "https://github.com/polaris-dxz/blog",
+            owner: "polaris-dxz",
+            clientID: "24ded1637e979b67b29f",
+            clientSecret: "10ce8a88157b0449f35929ab97d2558cfbd3b8eb",
+            admin: ["polaris-dxz"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/blog/assets/avatar.jpg" alt="上沅兮"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">上沅兮</p><p class="is-size-6 is-block">全栈工程师 ｜ Web3 工程师</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>深圳</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/blog/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/blog/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/polaris-dxz" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/polaris-dxz"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="https://polaris-dxz.github.io/blog/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-01-02T16:45:13.278Z">2024-01-03</time></p><p class="title"><a href="/blog/2024/01/03/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2018-04-13T10:59:55.000Z">2018-04-13</time></p><p class="title"><a href="/blog/2018/04/13/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/">以太坊开发入门</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2017-12-29T09:05:40.000Z">2017-12-29</time></p><p class="title"><a href="/blog/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/">从微信跳一跳学习逆向开发iOS</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/"><img src="https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg" alt="instrument 详解"></a></figure><div class="media-content"><p class="date"><time dateTime="2016-05-15T15:26:11.000Z">2016-05-15</time></p><p class="title"><a href="/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/">instrument 详解</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2015-04-13T10:52:04.000Z">2015-04-13</time></p><p class="title"><a href="/blog/2015/04/13/2015/Xcode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">Xcode 环境变量</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/blog/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2013/"><span class="level-start"><span class="level-item">2013</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/blog/tags/Http-%E6%8A%A5%E6%96%87/"><span class="tag">Http 报文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/URL/"><span class="tag">URL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/cURL/"><span class="tag">cURL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/gem/"><span class="tag">gem</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/iOS/"><span class="tag">iOS</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/plugins/"><span class="tag">plugins</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/rvm/"><span class="tag">rvm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/tools/"><span class="tag">tools</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=nodjzehfrr6&#039;&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="nodjzehfrr6&#039;" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="https://api.follow.it/subscription-form/UWt2QlVNeDdOcWM0TmthSmpVbkR0dFVGRDVlN00za2UrcDdrWFIxWkpjTkF1andia3dVQmoyb2IydS9sUzBjbXFUaXVIU3ZjUU1jaEVFbWpGOUE0UEhsdEp2OE11RXdLK09tNm5pdk1CNU1iOXA0RjJmV3ZkNUowMmVzQjVGeVl8U1BqVjFVNkw1UHlBYkVLblEvWWZVRUdLZFhrcDBlZ1h6VlE4NzlEc1B0ST0=/8" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/"><img src="/blog/img/logo.svg" alt="上沅兮のBlog" height="28"></a><p class="is-size-7"><span>&copy; 2024 上沅兮</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/blog/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

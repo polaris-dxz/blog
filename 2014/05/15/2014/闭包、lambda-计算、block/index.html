@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="google-adsense-account" content="ca-pub-7923567314234261"><meta name="msvalidate.01" content="F152A27E98C6CFEB442CA330FE930456"><title> 闭包、lambda 计算、block - 上沅兮のBlog</title><link rel="manifest" href="/blog/manifest.json"><meta name="application-name" content="上沅兮のBlog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="上沅兮のBlog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="导读：  什么是 block？ block 基本原理是什么？ 使用 block 需要避免哪些问题？"><meta property="og:type" content="blog"><meta property="og:title" content=" 闭包、lambda 计算、block"><meta property="og:url" content="https://polaris-dxz.github.io/blog/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"><meta property="og:site_name" content="上沅兮のBlog"><meta property="og:description" content="导读：  什么是 block？ block 基本原理是什么？ 使用 block 需要避免哪些问题？"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://i0.hdslb.com/bfs/vc/493788433bf17760555a4881fcfbf2c24fbec23e.jpg"><meta property="article:published_time" content="2014-05-15T07:07:23.000Z"><meta property="article:modified_time" content="2024-01-11T14:10:31.955Z"><meta property="article:author" content="上沅兮"><meta property="article:tag" content="iOS"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://i0.hdslb.com/bfs/vc/493788433bf17760555a4881fcfbf2c24fbec23e.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://polaris-dxz.github.io/blog/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"},"headline":" 闭包、lambda 计算、block","image":["https://i0.hdslb.com/bfs/vc/493788433bf17760555a4881fcfbf2c24fbec23e.jpg"],"datePublished":"2014-05-15T07:07:23.000Z","dateModified":"2024-01-11T14:10:31.955Z","author":{"@type":"Person","name":"上沅兮"},"publisher":{"@type":"Organization","name":"上沅兮のBlog","logo":{"@type":"ImageObject","url":"https://polaris-dxz.github.io/img/logo.svg"}},"description":"导读：  什么是 block？ block 基本原理是什么？ 使用 block 需要避免哪些问题？"}</script><link rel="canonical" href="https://polaris-dxz.github.io/blog/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"><link rel="alternate" href="https://polaris-dxz.github.io/blog/atom.xml" title="上沅兮のBlog" type="application/atom+xml"><link rel="icon" href="/blog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?87b4475b8903a91ecf10107cd6655705";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=421569814" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', '421569814');</script><script>(function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3811285,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="follow.it-verification-code" content="bTxbQkfVvAEQa1HYVN7k"><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/blog/"><img src="/blog/img/logo.svg" alt="上沅兮のBlog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/blog/">Home</a><a class="navbar-item" href="/blog/archives">Archives</a><a class="navbar-item" href="/blog/categories">Categories</a><a class="navbar-item" href="/blog/tags">Tags</a><a class="navbar-item" href="/blog/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/polaris-dxz"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2014-05-15T07:07:23.000Z" title="2014/5/15 15:07:23">2014-05-15</time>发表</span><span class="level-item"><time dateTime="2024-01-11T14:10:31.955Z" title="2024/1/11 22:10:31">2024-01-11</time>更新</span><span class="level-item">13 分钟读完 (大约1944个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"> 闭包、lambda 计算、block</h1><div class="content"><p>导读：</p>
+<ul>
+<li>什么是 block？</li>
+<li>block 基本原理是什么？</li>
+<li>使用 block 需要避免哪些问题？</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="什么是-block"><a href="#什么是-block" class="headerlink" title="什么是 block"></a>什么是 block</h2><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><p>block 概念：block是带有<strong>自动变量值</strong>的<strong>匿名函数</strong>。也称为闭包（closure）、lambda 计算。</p>
+<p>C语言的标注不允许存在这样的函数，但是可以通过函数指针来直接调用函数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明一个函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">func</span><span class="params">(<span class="type">int</span> count)</span>;      </span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个函数指针，并取出 func 的地址赋给 *funcP</span></span><br><span class="line"><span class="type">int</span> (*funcP)(<span class="type">int</span> count) = &amp;func;   <span class="comment">//注：函数形参可有可无，视情况而定</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过函数名访问这个函数</span></span><br><span class="line"><span class="type">int</span> result1 = func(<span class="number">10</span>);   </span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过函数的指针访问这个函数</span></span><br><span class="line"><span class="type">int</span> result2 = (*funcP)(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数指针的用途："><a href="#函数指针的用途：" class="headerlink" title="函数指针的用途："></a>函数指针的用途：</h3><p>函数指针的用途有两个：</p>
+<ul>
+<li>调用函数</li>
+<li>作为函数的参数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Class* a; <span class="comment">// a 是个对象，类型是指针</span></span><br><span class="line">Class *a; <span class="comment">// a 是个指针，类型是类</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> *  虽然上述写法均表示声明一个指针型变量，但是着重点不同。</span></span><br><span class="line"><span class="comment"> *  前者意在声明一个变量，后者意在声明一个指针。</span></span><br><span class="line"><span class="comment"> *  这种自行体会就好，不要拘泥于写法。</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="悬浮指针的出现及避免"><a href="#悬浮指针的出现及避免" class="headerlink" title="悬浮指针的出现及避免"></a>悬浮指针的出现及避免</h3><p>声明一个指针需要注意的问题：</p>
+<ul>
+<li>避免出现<strong>悬浮指针</strong>（也称迷途指针、失控指针）</li>
+</ul>
+<p>悬浮指针的出现：dealloc 一个指针后，没有把指针置空（nil）。</p>
+<p><em>如果再次调用该指针并没有重新赋值，就会出现问题</em>。</p>
+<blockquote>
+<p>注意：空指针 ！&#x3D; 迷途指针。空指针指向的地址为空。</p>
+</blockquote>
+<blockquote>
+<p>指针的指针即本身</p>
+</blockquote>
+<h3 id="函数中可能使用的变量："><a href="#函数中可能使用的变量：" class="headerlink" title="函数中可能使用的变量："></a>函数中可能使用的变量：</h3><ul>
+<li><p>函数的参数</p>
+</li>
+<li><p>局部变量（自动变量）</p>
+</li>
+<li><p>静态变量（静态局部变量）</p>
+</li>
+<li><p>全局变量</p>
+</li>
+<li><p>静态全局变量</p>
+<blockquote>
+<p>使用全局变量会占用更多的内存（因为其生命期长），不过在计算机配置很高的今天，这个不应该算什么问题，除非使用的是巨大对象的全局变量，能避免就一定要避免。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="OC-中函数和方法的区别"><a href="#OC-中函数和方法的区别" class="headerlink" title="OC 中函数和方法的区别"></a>OC 中函数和方法的区别</h3><p>函数和对象无关，方法和对象有关。最主要的是，函数和方法写法不一样啊！</p>
+<blockquote>
+<p>函数是指把一个值通过一系列计算得到一个新的值。</p>
+<p>而方法更多考虑的是事情。如让一个人通过一系列动作制造一个新的东西。</p>
+</blockquote>
+<h3 id="为什么-Block-可以作为函数参数和返回值？"><a href="#为什么-Block-可以作为函数参数和返回值？" class="headerlink" title="为什么 Block 可以作为函数参数和返回值？"></a>为什么 Block 可以作为函数参数和返回值？</h3><p>函数的参数和返回值可以是 void、int，也可以是一个类对象，当然也可以是指针（int* char*）。而 block 为什么可以作为函数的参数甚至是返回值呢？</p>
+<p><strong>因为block的本质是 OC 对象。</strong>（OC 的 层面）</p>
+<p>block的实质是<strong>栈</strong>上 block 的结构体实例。（C 的层面）这里也可以理解为是一个函数指针。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明一个参数为 int 型、返回值为 int 型的 blk_t类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span>(^blk_t)(<span class="type">int</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个 blk 变量 int (^blk)(int) = ^(int count)&#123;return count+1;&#125;;</span></span><br><span class="line"> blk_t blk = ^(<span class="type">int</span> count)&#123;<span class="keyword">return</span> count+<span class="number">1</span>;&#125;;<span class="comment">// 等价于第二行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个名为 blkptr 的 blk_t型的指针，并指向 blk 的地址。</span></span><br><span class="line">blk_t *blkptr = &amp;blk;</span><br><span class="line">(*blkptr)(<span class="number">10</span>); <span class="comment">// 利用指针调用这个 blk</span></span><br><span class="line">blk(<span class="number">10</span>); <span class="comment">// 直接调用这个 blk</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="block-说明符"><a href="#block-说明符" class="headerlink" title="__block 说明符"></a>__block 说明符</h3><p>引入<code>__block</code>的目的是用来声明变量的作用域的，意思就是 block 外用<code>__block</code>声明的变量，block 内也能访问到。虽然这货和全局变量有些类似，但是老机器全局变量用多了会导致浪费内存啊！（因为全局变量生命周期比较长）。</p>
+<p>吐槽：乖乖用__block吧，特大的对象做全局变量的时候，也是会出现问题的。</p>
+<h3 id="block-的实质"><a href="#block-的实质" class="headerlink" title="block 的实质"></a>block 的实质</h3><p>block的实质是<strong>栈</strong>上 block 的结构体实例。（吐槽，说白了就是通过指针访问的）</p>
+<p>（写一个代码用 clang rewrite 一下就明白了，因为有 Foundation 框架，一个5行的代码能重写成将近10万行。。不过核心代码在最后几行，翻到最后看就可以了）</p>
+<blockquote>
+<p>重写代码的时候会发现有三个结构体，一个是<code>__block_imp1 </code>另一个是<code>__main_block_imp1_0</code>还有一个是<code>__main_block_desc_0</code></p>
+<p>这里面引申一个概念就是 IMP 和SEL，具体以后再分析(runtime)，知道SEL 表示（选择器） IMP 表示<em>函数指针</em>就可以了。</p>
+</blockquote>
+<p><code>__block</code>的实质是栈上<code>__block</code>变量的结构体实例。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// block的实质结构</span></span><br><span class="line"><span class="keyword">typedef</span> objc_class *Class; <span class="comment">//Class 为 objc_class 结构体的指针类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object&#123;</span><br><span class="line">  Class isa;</span><br><span class="line">&#125; *<span class="type">id</span>; <span class="comment">//id为 objc_objec 结构体的指针类型</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>将 block源码转换为 C++源码：<code>clang -rewrite-objc filename</code></p>
+<table>
+<thead>
+<tr>
+<th>__block变量的配置存储域</th>
+<th>Block 从栈复制到堆是的影响</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>栈（stack）</td>
+<td>从栈复制到堆并被 Block 持有</td>
+</tr>
+<tr>
+<td>堆（heap&#x2F;maclloc）</td>
+<td>被 Block 持有</td>
+</tr>
+</tbody></table>
+<p>栈上的 block ：变量作用域结束时，栈上的 __block变量和 block 被废弃</p>
+<p>堆上的 block：变量作用域结束时不受影响，需要手动释放。 </p>
+<h2 id="block-循环引用的问题"><a href="#block-循环引用的问题" class="headerlink" title="block 循环引用的问题"></a>block 循环引用的问题</h2><p>如果在 Block 中使用__strong修饰的对象和变量，那么当 Block 从栈复制到堆上的时候，该对象就会被 Block所持有。这样就会引起循环引用。</p>
+<blockquote>
+<p>循环引用这里有个重点，Block 是存储在栈上的，普通对象和变量是存储在堆上的。堆（malloc）上的内存需要我们手动管理（需要 dealloc），而栈上的内存顾名思义是按照数据结构中栈的方式管理，即由系统进行分配。</p>
+</blockquote>
+<p><strong>对象持有 block &#x3D;&gt; block持有 self &#x3D;&gt; self 持有对象，即形成循环引用。</strong>（这里的 self 也包含当前类的其他属性，因为在调用属性的同时也截获了 self）。</p>
+<blockquote>
+<p>编译器能查出循环引用。</p>
+</blockquote>
+<h2 id="copy-release"><a href="#copy-release" class="headerlink" title="copy release"></a>copy release</h2><p>ARC 无效的时候，我们需要手动将 Block 从栈复制到堆。</p>
+<p>因为 ARC 无效，所以需要我们手动释放复制的 Block。</p>
+<p>这个时候我们用 copy 方法来复制，release 方法来释放。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> (^block_on_heap)(<span class="type">void</span>) = [block_on_stack <span class="keyword">copy</span>];<span class="comment">//正常复制</span></span><br><span class="line"></span><br><span class="line">[block_on_heap release];<span class="comment">//正常释放</span></span><br><span class="line"></span><br><span class="line">[block_on_heap <span class="keyword">retain</span>]; <span class="comment">// 因为block 在堆上，所以可以被 retain</span></span><br><span class="line"></span><br><span class="line">[block_on_stack <span class="keyword">retain</span>];<span class="comment">// 因为现在 block 在栈上，所以这个方法没用</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>ARC 是苹果公司在iOS 5 以后推出的内存管理机制。。iOS 5以前是手动管理的。。如果还问我 ARC 的话，那我基本不考虑你们公司了。。。。</p>
+</blockquote>
+<h2 id="block的作用"><a href="#block的作用" class="headerlink" title="__block的作用"></a>__block的作用</h2><p>ARC 无效__block用来避免 Block 中出现的循环引用。</p>
+<p>栈——&gt;堆时：__block修饰的变量不会被 retain。没用它修饰的就会被 retain。</p>
+<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><table>
+<thead>
+<tr>
+<th>对象操作</th>
+<th>OC 方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生成并持有对象</td>
+<td>+ alloc、+ new、copy、mutableCopy</td>
+</tr>
+<tr>
+<td>持有对象</td>
+<td>- retain</td>
+</tr>
+<tr>
+<td>释放对象</td>
+<td>- release</td>
+</tr>
+<tr>
+<td>废弃对象</td>
+<td>- dealloc</td>
+</tr>
+</tbody></table>
+<h2 id="strong-和-weak"><a href="#strong-和-weak" class="headerlink" title="__strong 和 __weak"></a><code>__strong</code> 和 <code>__weak</code></h2><p>__strong：表示对对象的强引用。即在超出其作用域被废弃时，随着强引用的释放，引用的对象也会被释放。</p>
+<h2 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h2><p>循环引用容易导致内存泄露。内存泄露就是应当废弃的对象在超出其生存周期后继续存在。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p> 闭包、lambda 计算、block</p><p><a href="https://polaris-dxz.github.io/blog/2014/05/15/2014/闭包、lambda-计算、block/">https://polaris-dxz.github.io/blog/2014/05/15/2014/闭包、lambda-计算、block/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>上沅兮</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2014-05-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-01-11</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/blog/tags/iOS/">iOS</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=65944e41ffbcf100127cdd05&amp;product=inline-share-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/blog/2014/05/16/2014/ios-HTTP%E8%AF%B7%E6%B1%82/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">ios HTTP请求</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/2014/05/14/2014/UITableView%E8%AF%A6%E8%A7%A3/"><span class="level-item">UITableView详解</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "7e1032ce81b8f207cc3412e1b39eb8c9",
+            repo: "https://github.com/polaris-dxz/blog",
+            owner: "polaris-dxz",
+            clientID: "24ded1637e979b67b29f",
+            clientSecret: "10ce8a88157b0449f35929ab97d2558cfbd3b8eb",
+            admin: ["polaris-dxz"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/blog/assets/avatar.jpg" alt="上沅兮"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">上沅兮</p><p class="is-size-6 is-block">全栈工程师 ｜ Web3 工程师</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>深圳</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/blog/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/blog/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/blog/tags"><p class="title">10</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/polaris-dxz" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/polaris-dxz"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="https://polaris-dxz.github.io/blog/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-01-02T16:45:13.278Z">2024-01-03</time></p><p class="title"><a href="/blog/2024/01/03/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2018-04-13T10:59:55.000Z">2018-04-13</time></p><p class="title"><a href="/blog/2018/04/13/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/">以太坊开发入门</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2017-12-29T09:05:40.000Z">2017-12-29</time></p><p class="title"><a href="/blog/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/">从微信跳一跳学习逆向开发iOS</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/"><img src="https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg" alt="instrument 详解"></a></figure><div class="media-content"><p class="date"><time dateTime="2016-05-15T15:26:11.000Z">2016-05-15</time></p><p class="title"><a href="/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/">instrument 详解</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2015-04-13T10:52:04.000Z">2015-04-13</time></p><p class="title"><a href="/blog/2015/04/13/2015/Xcode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">Xcode 环境变量</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/blog/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/blog/archives/2013/"><span class="level-start"><span class="level-item">2013</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/blog/tags/Http-%E6%8A%A5%E6%96%87/"><span class="tag">Http 报文</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/URL/"><span class="tag">URL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/cURL/"><span class="tag">cURL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/gem/"><span class="tag">gem</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/iOS/"><span class="tag">iOS</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/plugins/"><span class="tag">plugins</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/rvm/"><span class="tag">rvm</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/blog/tags/tools/"><span class="tag">tools</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=nodjzehfrr6&#039;&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="nodjzehfrr6&#039;" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="https://api.follow.it/subscription-form/UWt2QlVNeDdOcWM0TmthSmpVbkR0dFVGRDVlN00za2UrcDdrWFIxWkpjTkF1andia3dVQmoyb2IydS9sUzBjbXFUaXVIU3ZjUU1jaEVFbWpGOUE0UEhsdEp2OE11RXdLK09tNm5pdk1CNU1iOXA0RjJmV3ZkNUowMmVzQjVGeVl8U1BqVjFVNkw1UHlBYkVLblEvWWZVRUdLZFhrcDBlZ1h6VlE4NzlEc1B0ST0=/8" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/blog/"><img src="/blog/img/logo.svg" alt="上沅兮のBlog" height="28"></a><p class="is-size-7"><span>&copy; 2024 上沅兮</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/blog/js/column.js"></script><script src="/blog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/blog/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/blog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/blog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

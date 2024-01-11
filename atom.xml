@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>上沅兮のBlog</title>
+  <icon>https://polaris-dxz.github.io/blog/icon.png</icon>
+  
+  <link href="https://polaris-dxz.github.io/blog/atom.xml" rel="self"/>
+  
+  <link href="https://polaris-dxz.github.io/blog/"/>
+  <updated>2024-01-02T16:45:13.278Z</updated>
+  <id>https://polaris-dxz.github.io/blog/</id>
+  
+  <author>
+    <name>上沅兮</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://polaris-dxz.github.io/blog/2024/01/03/hello-world/"/>
+    <id>https://polaris-dxz.github.io/blog/2024/01/03/hello-world/</id>
+    <published>2024-01-02T16:45:13.278Z</published>
+    <updated>2024-01-02T16:45:13.278Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>以太坊开发入门</title>
+    <link href="https://polaris-dxz.github.io/blog/2018/04/13/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
+    <id>https://polaris-dxz.github.io/blog/2018/04/13/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</id>
+    <published>2018-04-13T10:59:55.000Z</published>
+    <updated>2024-01-11T14:13:11.589Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;预备知识：&quot;&gt;&lt;a href=&quot;#预备知识：&quot; class=&quot;headerlink&quot; title=&quot;预备知识：&quot;&gt;&lt;/a&gt;预备知识：&lt;/h2&gt;&lt;p&gt;你需要知道区块链的概念及实现一个无需信任的电子货币的运作原理。可以先看看长版，如果你觉得太长，可以看看短版。但我还是建议，看那个长的视频。&lt;br&gt;如果你是一名软件工程师，拥有软件开发的经验。能知道从系统、架构角度学一个东西，其实能倍增学习效果。&lt;br&gt;如果有一周的空闲时间。好了，下面开始就不再是废话了。&lt;br&gt;你需要了解 merkle tree的基本概念，看他是如何做到防止信息篡改，以及信息自校验的。&lt;br&gt;不用必须读白皮书，只需要了解一些基本概念。但说实话，如果不读，不会相信这些概念，从而不能真正明白这些概念，所以读白皮书也许仍然是最快的方式。&lt;/p&gt;
+&lt;p&gt;我建议你完整的读一下本文，从一个较高的层面了解一下，然后再挑感兴趣的，一一钻研，也许要花几天时间哦。&lt;/p&gt;
+&lt;p&gt;你最后会发现，区块链就是建立在朴实无华的基本技术之上，一点也不神奇。虽然最近各种ICO把它炒得非常热。每个人都是站在巨人的肩膀上，如果你是程序员，你能对这些项目和技术，理解得更深。所以不要因为其它一些糟粕，而失去了一个提升自己的机会。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从微信跳一跳学习逆向开发iOS</title>
+    <link href="https://polaris-dxz.github.io/blog/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
+    <id>https://polaris-dxz.github.io/blog/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/</id>
+    <published>2017-12-29T09:05:40.000Z</published>
+    <updated>2024-01-11T14:10:59.641Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这几天出了个小程序特别火，借此机会学习下逆向开发。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>instrument 详解</title>
+    <link href="https://polaris-dxz.github.io/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://polaris-dxz.github.io/blog/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/</id>
+    <published>2016-05-15T15:26:11.000Z</published>
+    <updated>2024-01-11T14:14:39.858Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;整理一些常用 instrument 工具。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Xcode 环境变量</title>
+    <link href="https://polaris-dxz.github.io/blog/2015/04/13/2015/Xcode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <id>https://polaris-dxz.github.io/blog/2015/04/13/2015/Xcode-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</id>
+    <published>2015-04-13T10:52:04.000Z</published>
+    <updated>2024-01-11T14:10:53.926Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ios知识脉络梳理</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/12/19/2014/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/12/19/2014/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/</id>
+    <published>2014-12-19T15:34:21.000Z</published>
+    <updated>2024-01-11T14:10:46.821Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文收录并整理了一些 iOS 开发知识盲点。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>weak和 strong</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/05/20/2014/weak%E5%92%8C-strong/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/05/20/2014/weak%E5%92%8C-strong/</id>
+    <published>2014-05-20T02:53:58.000Z</published>
+    <updated>2024-01-11T14:07:39.732Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;强引用和弱引用常考知识点和易错盲点。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ios HTTP请求</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/05/16/2014/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/05/16/2014/ios-HTTP%E8%AF%B7%E6%B1%82/</id>
+    <published>2014-05-16T12:56:40.000Z</published>
+    <updated>2024-01-11T14:53:37.164Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;iOS9引入了新特性 &lt;a href=&quot;https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13&quot;&gt;App Transport Security (ATS)&lt;/a&gt;，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title> 闭包、lambda 计算、block</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/</id>
+    <published>2014-05-15T07:07:23.000Z</published>
+    <updated>2024-01-11T14:10:31.955Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;导读：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是 block？&lt;/li&gt;
+&lt;li&gt;block 基本原理是什么？&lt;/li&gt;
+&lt;li&gt;使用 block 需要避免哪些问题？&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UITableView详解</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/05/14/2014/UITableView%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/05/14/2014/UITableView%E8%AF%A6%E8%A7%A3/</id>
+    <published>2014-05-14T00:32:25.000Z</published>
+    <updated>2024-01-11T14:08:49.763Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;UITableView&lt;strong&gt;DataSource&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必要的&lt;ul&gt;
+&lt;li&gt;设置 tableview</summary>
+        
+      
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈 iOS 系统下的物理内存与虚拟内存</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/05/14/2014/%E6%B5%85%E8%B0%88-iOS-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/05/14/2014/%E6%B5%85%E8%B0%88-iOS-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</id>
+    <published>2014-05-14T00:32:25.000Z</published>
+    <updated>2024-01-11T14:45:15.085Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前看慕课网的视频：《&lt;a href=&quot;https://www.imooc.com/video/11075&quot;&gt;iOS 内存管理及优化&lt;/a&gt;》发现自己理解的并不深刻，写篇文章浅谈一下到底什么是物理内存和虚拟内存，并记录下自己的体会。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>@interface编写规范</title>
+    <link href="https://polaris-dxz.github.io/blog/2014/01/10/2014/iOS%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    <id>https://polaris-dxz.github.io/blog/2014/01/10/2014/iOS%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</id>
+    <published>2014-01-10T12:58:02.000Z</published>
+    <updated>2024-01-11T14:09:23.012Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1、合理使用读写权限以及作用域修饰符。&lt;/p&gt;
+&lt;p&gt;2、合理使用向前声明@class&lt;/p&gt;
+&lt;p&gt;3、暴露必要的接口&lt;/p&gt;
+&lt;p&gt;4、定义枚举:NS_ENUM、NS_OPTIONS、字符串枚举&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+    <category term="iOS" scheme="https://polaris-dxz.github.io/blog/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Http - Web 基础概述</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/</id>
+    <published>2013-05-13T08:58:34.000Z</published>
+    <updated>2024-01-11T14:19:42.063Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;唔。。。我真的是太菜了&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Http 报文" scheme="https://polaris-dxz.github.io/blog/tags/Http-%E6%8A%A5%E6%96%87/"/>
+    
+    <category term="URL" scheme="https://polaris-dxz.github.io/blog/tags/URL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vps 部署 blog 的一些坑</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/04/25/2013/vps-%E9%83%A8%E7%BD%B2-blog-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/04/25/2013/vps-%E9%83%A8%E7%BD%B2-blog-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</id>
+    <published>2013-04-25T09:06:37.000Z</published>
+    <updated>2024-01-11T14:45:04.665Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;git-版本过低导致http-请求失败&quot;&gt;&lt;a href=&quot;#git-版本过低导致http-请求失败&quot; class=&quot;headerlink&quot; title=&quot;git 版本过低导致http 请求失败&quot;&gt;&lt;/a&gt;git 版本过低导致http</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gem、rvm使用心得</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/04/25/2013/gem%E3%80%81rvm%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/04/25/2013/gem%E3%80%81rvm%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</id>
+    <published>2013-04-25T09:06:37.000Z</published>
+    <updated>2024-01-11T14:17:03.041Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;gem-rvm使用心得&quot;&gt;&lt;a href=&quot;#gem-rvm使用心得&quot; class=&quot;headerlink&quot; title=&quot;gem,rvm使用心得&quot;&gt;&lt;/a&gt;gem,rvm使用心得&lt;/h1&gt;&lt;h5 id=&quot;rvm-和-gem-的关系&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="gem" scheme="https://polaris-dxz.github.io/blog/tags/gem/"/>
+    
+    <category term="rvm" scheme="https://polaris-dxz.github.io/blog/tags/rvm/"/>
+    
+    <category term="Linux" scheme="https://polaris-dxz.github.io/blog/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 深入学习</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/04/24/2013/github-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/04/24/2013/github-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</id>
+    <published>2013-04-24T09:07:16.000Z</published>
+    <updated>2024-01-11T14:17:19.017Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;（一）git深入学习&quot;&gt;&lt;a href=&quot;#（一）git深入学习&quot; class=&quot;headerlink&quot; title=&quot;（一）git深入学习&quot;&gt;&lt;/a&gt;（一）git深入学习&lt;/h1&gt;&lt;h3 id=&quot;一、官方说明&quot;&gt;&lt;a href=&quot;#一、官方说明&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="https://polaris-dxz.github.io/blog/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分享几个常用的插件工具</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/03/12/2013/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/03/12/2013/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/</id>
+    <published>2013-03-12T07:12:25.000Z</published>
+    <updated>2024-01-11T14:52:27.807Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;分享几个常用的插件工具&quot;&gt;&lt;a href=&quot;#分享几个常用的插件工具&quot; class=&quot;headerlink&quot; title=&quot;分享几个常用的插件工具&quot;&gt;&lt;/a&gt;分享几个常用的插件工具&lt;/h1&gt;&lt;h2 id=&quot;一、gem&quot;&gt;&lt;a href=&quot;#一、gem&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="tools" scheme="https://polaris-dxz.github.io/blog/tags/tools/"/>
+    
+    <category term="plugins" scheme="https://polaris-dxz.github.io/blog/tags/plugins/"/>
+    
+    <category term="Linux" scheme="https://polaris-dxz.github.io/blog/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何快速学习一门编程语言</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/03/12/2013/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/03/12/2013/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</id>
+    <published>2013-03-12T07:12:25.000Z</published>
+    <updated>2024-01-11T14:48:16.698Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;前言：现在的工作要求我们如何在短期内高效的自学一门语言，本文记录了我学习的一些新的与看法。&lt;/p&gt;
+&lt;p&gt;自学编程的重要思想：Practice make perfect（熟能生巧）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;watch&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;do&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;read</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>curl 使用心得</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/01/13/2013/cUrl%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/01/13/2013/cUrl%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</id>
+    <published>2013-01-13T06:32:40.000Z</published>
+    <updated>2024-01-11T14:10:15.978Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;curl 真是调试利器啊！！&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Linux" scheme="https://polaris-dxz.github.io/blog/tags/Linux/"/>
+    
+    <category term="cURL" scheme="https://polaris-dxz.github.io/blog/tags/cURL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centOS修改ssh端口</title>
+    <link href="https://polaris-dxz.github.io/blog/2013/01/11/2013/centOS%E4%BF%AE%E6%94%B9ssh%E7%AB%AF%E5%8F%A3/"/>
+    <id>https://polaris-dxz.github.io/blog/2013/01/11/2013/centOS%E4%BF%AE%E6%94%B9ssh%E7%AB%AF%E5%8F%A3/</id>
+    <published>2013-01-11T06:11:49.000Z</published>
+    <updated>2024-01-11T14:44:47.567Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;centOS7 默认 ssh 端口是22，这个很不安全，所以我们修改下默认端口。这个东西虽然是老生常谈了，而且网上的教程也很多，不过自己还是整理一下，巩固一下这个知识。&lt;/p&gt;
+&lt;h2 id=&quot;修改-sshd-config-文件&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
