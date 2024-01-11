@@ -13,10 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/hello-world.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": true
+                "file": "source/_posts/2013/Http报文详解.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/hello-world.md",
+                "file": "source/_posts/2013/Http报文详解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/hello-world.md",
+                "file": "source/_posts/2013/Http报文详解.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/hello-world.md"
+                "file": "source/_posts/2013/Http报文详解.md"
               }
             }
           }
@@ -149,14 +148,20 @@
   },
   "active": "e0429222f17428c9",
   "lastOpenFiles": [
-    "source/_posts/未命名.md",
+    "source/_posts/2013/cUrl使用心得.md",
+    "source/_posts/2014/闭包、lambda-计算、block.md",
+    "source/_posts/2015/Xcode-环境变量.md",
+    "source/_posts/2016/instrument-详解.md",
+    "source/_posts/2017/从微信跳一跳学习逆向开发iOS.md",
+    "source/_posts/2018/以太坊开发入门.md",
+    "public/css/images/banner.jpg",
     "source/_posts/hello-world.md",
+    "source/_posts/未命名.md",
     "source/about/index.md",
     "source/about/未命名.md",
     "source/about/yrsd.md",
     "scripts/test.sh",
     "scripts/README.md",
-    "source/_posts/2016/instrument-详解.md",
     "scripts/test.js",
     "db.json",
     "node_modules.nosync/resolve/test/resolver/symlinked/_/node_modules/foo.js",
@@ -181,11 +186,6 @@
     "node_modules.nosync/@babel/highlight/node_modules/ansi-styles/readme.md",
     "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/ms/readme.md",
     "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/ms/license.md",
-    "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/debug/README.md",
-    "node_modules.nosync/@babel/helper-create-regexp-features-plugin/node_modules/semver/README.md",
-    "node_modules.nosync/@babel/helper-create-class-features-plugin/node_modules/semver/README.md",
-    "node_modules.nosync/@babel/helper-compilation-targets/node_modules/semver/README.md",
-    "node_modules.nosync/@babel/core/node_modules/semver/README.md",
     "node_modules.nosync/hexo-theme-icarus/source/img/razor-top-black.svg",
     "node_modules.nosync/hexo-theme-icarus/source/img/razor-bottom-black.svg",
     "node_modules.nosync/hexo-theme-icarus/source/img/og_image.png",
@@ -193,7 +193,6 @@
     "node_modules.nosync/hexo-theme-icarus/source/img/favicon.svg",
     "node_modules.nosync/hexo-theme-icarus/source/img/avatar.png",
     "node_modules.nosync/nib/iconic/iconic_stroke.svg",
-    "node_modules.nosync/highlight.js/styles/pojoaque.jpg",
-    "node_modules.nosync/highlight.js/styles/brown-papersq.png"
+    "node_modules.nosync/highlight.js/styles/pojoaque.jpg"
   ]
 }
