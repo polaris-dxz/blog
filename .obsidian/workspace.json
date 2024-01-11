@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "b9c0805cf96c20c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "f824ff1c2168d73c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e0429222f17428c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/hello-world.md",
+                "mode": "preview",
+                "backlinks": true,
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "38655f977a154d46",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f4828b29cd0ee8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a230786cbafb2e2c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a607d27bbf8f9b05",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7a84170e933da24c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8707abdb6df22a94",
+    "type": "split",
+    "children": [
+      {
+        "id": "4fed9341eef41045",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9519f80a11c355ca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "source/_posts/hello-world.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "65453004703fde7a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "source/_posts/hello-world.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8ca6bb68d6843791",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "cd901bb50f003507",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "source/_posts/hello-world.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "e0429222f17428c9",
+  "lastOpenFiles": [
+    "source/_posts/未命名.md",
+    "source/_posts/hello-world.md",
+    "source/about/index.md",
+    "source/about/未命名.md",
+    "source/about/yrsd.md",
+    "scripts/test.sh",
+    "scripts/README.md",
+    "source/_posts/2016/instrument-详解.md",
+    "scripts/test.js",
+    "db.json",
+    "node_modules.nosync/resolve/test/resolver/symlinked/_/node_modules/foo.js",
+    "node_modules.nosync/resolve/test/resolver/multirepo/packages/package-b/package.json",
+    "node_modules.nosync/resolve/test/resolver/multirepo/packages/package-b/index.js",
+    "node_modules.nosync/resolve/test/resolver/multirepo/packages/package-a/package.json",
+    "node_modules.nosync/resolve/test/resolver/multirepo/packages/package-a/index.js",
+    "node_modules.nosync/jsdom/lib/jsdom/living/helpers/svg/render.js",
+    "node_modules.nosync/jsdom/lib/jsdom/living/helpers/svg/basic-types.js",
+    "node_modules.nosync/hexo-theme-landscape/source/css/images/banner.jpg",
+    "node_modules.nosync/hexo-cli/assets/source/_posts/hello-world.md",
+    "node_modules.nosync/@babel/traverse/node_modules/ms/readme.md",
+    "node_modules.nosync/@babel/traverse/node_modules/ms/license.md",
+    "node_modules.nosync/@babel/traverse/node_modules/debug/README.md",
+    "node_modules.nosync/@babel/preset-env/node_modules/semver/README.md",
+    "node_modules.nosync/@babel/highlight/node_modules/supports-color/readme.md",
+    "node_modules.nosync/@babel/highlight/node_modules/has-flag/readme.md",
+    "node_modules.nosync/@babel/highlight/node_modules/color-name/README.md",
+    "node_modules.nosync/@babel/highlight/node_modules/color-convert/README.md",
+    "node_modules.nosync/@babel/highlight/node_modules/color-convert/CHANGELOG.md",
+    "node_modules.nosync/@babel/highlight/node_modules/chalk/readme.md",
+    "node_modules.nosync/@babel/highlight/node_modules/ansi-styles/readme.md",
+    "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/ms/readme.md",
+    "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/ms/license.md",
+    "node_modules.nosync/@babel/helper-define-polyfill-provider/node_modules/debug/README.md",
+    "node_modules.nosync/@babel/helper-create-regexp-features-plugin/node_modules/semver/README.md",
+    "node_modules.nosync/@babel/helper-create-class-features-plugin/node_modules/semver/README.md",
+    "node_modules.nosync/@babel/helper-compilation-targets/node_modules/semver/README.md",
+    "node_modules.nosync/@babel/core/node_modules/semver/README.md",
+    "node_modules.nosync/hexo-theme-icarus/source/img/razor-top-black.svg",
+    "node_modules.nosync/hexo-theme-icarus/source/img/razor-bottom-black.svg",
+    "node_modules.nosync/hexo-theme-icarus/source/img/og_image.png",
+    "node_modules.nosync/hexo-theme-icarus/source/img/logo.svg",
+    "node_modules.nosync/hexo-theme-icarus/source/img/favicon.svg",
+    "node_modules.nosync/hexo-theme-icarus/source/img/avatar.png",
+    "node_modules.nosync/nib/iconic/iconic_stroke.svg",
+    "node_modules.nosync/highlight.js/styles/pojoaque.jpg",
+    "node_modules.nosync/highlight.js/styles/brown-papersq.png"
+  ]
+}

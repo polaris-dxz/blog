@@ -9,7 +9,7 @@ vendor/
 node_modules/
 node_modules.nosync/
 public/
-.obsidian/
+.obsidian/workspace
 .deploy_git/
 
 .DS_Store

@@ -1,0 +1,18 @@
+{
+  "newFileLocation": "current",
+  "userIgnoreFilters": [
+    "node_modules/",
+    "node_modules.nosync/",
+    "public/",
+    "themes/",
+    "layout/",
+    "scaffolds/",
+    "package/",
+    "scripts/",
+    "languages/",
+    "source/_data/",
+    "source/categories/",
+    "source/group/",
+    "source/tag/"
+  ]
+}
